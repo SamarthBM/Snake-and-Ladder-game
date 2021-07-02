@@ -9,12 +9,11 @@ package com.bridgelabs;
 import java.util.Random;
 
 public class SnakeAndLadder {
+	// Initializing first player position to 0
+		public static int PLAYER_1 = 0;
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to snake and ladder game");
-
-		// Initializing first player position to 0
-		int player1 = 0;
 
 		Random random = new Random();
 
@@ -32,19 +31,19 @@ public class SnakeAndLadder {
 
 		case 1:
 			System.out.println("Ladder");
-			player1 = player1 + dice_num;
-			System.out.println("Your position is: " + player1);
+			PLAYER_1 = PLAYER_1 + dice_num;
+			System.out.println("Your position is: " + PLAYER_1);
 			break;
 
 		default:
 			System.out.println("Snake");
-			player1 = player1 - dice_num;
+			PLAYER_1 = PLAYER_1 - dice_num;
 			
 			// Player position will be set to 0, if position is less than 0.
-			if (player1 < 0) {
-				player1 = 0;
+			if (PLAYER_1 < 0) {
+				PLAYER_1 = 0;
 			}
-			System.out.println("Your position is: " + player1);
+			System.out.println("Your position is: " + PLAYER_1);
 			break;
 
 		}
