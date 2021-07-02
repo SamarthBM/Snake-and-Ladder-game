@@ -41,9 +41,6 @@ public class SnakeAndLadder {
 					
 					PLAYER_1 = PLAYER_1-dice_num;
 				}
-				else {
-					System.out.println("You won");
-				}
 				System.out.println("Your position is: " + PLAYER_1);
 				System.out.println("");
 				break;
