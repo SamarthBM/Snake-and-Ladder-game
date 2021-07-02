@@ -9,44 +9,47 @@ package com.bridgelabs;
 import java.util.Random;
 
 public class SnakeAndLadder {
+	public static int PLAYER_1 = 0;
+	public static int WINNING_POSITION = 100;
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to snake and ladder game");
 
-		// Initializing first player position to 0
-		int player1 = 0;
-
 		Random random = new Random();
-
-		int dice_num = 1 + random.nextInt(6);
-		System.out.println("Your dice number is: " + dice_num);
 		
-		// Generated random numbers to get the options.
-		int option = random.nextInt(3);
+		// Repeating till player reaches winning position.
+		while (PLAYER_1 != WINNING_POSITION) {
 
-		switch (option) {
+			int dice_num = 1 + random.nextInt(6);
+			System.out.println("Your dice number is: " + dice_num);
 
-		case 0:
-			System.out.println("There are no play");
-			break;
+			// Generated random numbers to get the options.
+			int option = random.nextInt(3);
 
-		case 1:
-			System.out.println("Ladder");
-			player1 = player1 + dice_num;
-			System.out.println("Your position is: " + player1);
-			break;
+			switch (option) {
 
-		default:
-			System.out.println("Snake");
-			player1 = player1 - dice_num;
-			
-			// Player position will be set to 0, if position is less than 0.
-			if (player1 < 0) {
-				player1 = 0;
+			case 0:
+				System.out.println("There are no play");
+				break;
+
+			case 1:
+				System.out.println("Ladder");
+				PLAYER_1 = PLAYER_1 + dice_num;
+				System.out.println("Your position is: " + PLAYER_1);
+				break;
+
+			default:
+				System.out.println("Snake");
+				PLAYER_1 = PLAYER_1 - dice_num;
+
+				// Player position will be set to 0, if position is less than 0.
+				if (PLAYER_1 < 0) {
+					PLAYER_1 = 0;
+				}
+				System.out.println("Your position is: " + PLAYER_1);
+				break;
+
 			}
-			System.out.println("Your position is: " + player1);
-			break;
-
 		}
 
 	}
