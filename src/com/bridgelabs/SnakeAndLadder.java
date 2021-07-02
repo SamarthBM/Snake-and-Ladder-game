@@ -6,13 +6,15 @@
 
 package com.bridgelabs;
 
-
 public class SnakeAndLadder {
+
+	// Initializing first player position to 0
+	public static final int player1 = 0;
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to snake and ladder game");
+		System.out.println("Your position is " + player1);
 
 	}
 
 }
-
