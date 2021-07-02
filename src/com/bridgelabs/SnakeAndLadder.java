@@ -9,6 +9,8 @@ package com.bridgelabs;
 import java.util.Random;
 
 public class SnakeAndLadder {
+	
+	// Declaring constant variables.
 	public static int PLAYER_1 = 0;
 	public static int WINNING_POSITION = 100;
 
@@ -16,13 +18,17 @@ public class SnakeAndLadder {
 		System.out.println("Welcome to snake and ladder game");
 
 		Random random = new Random();
+		int count = 0;
 		
 		// Repeating till player reaches winning position.
 		while (PLAYER_1 != WINNING_POSITION) {
 
 			int dice_num = 1 + random.nextInt(6);
-			System.out.println("Your dice number is: " + dice_num);
-
+			
+			//To get the count of die rolled
+			count++;
+			System.out.println("Your dice number is: " + dice_num);	
+			
 			// Generated random numbers to get the options.
 			int option = random.nextInt(3);
 
@@ -59,6 +65,7 @@ public class SnakeAndLadder {
 
 			}
 		}
+		System.out.println("Number of times die rolled: " + count);
 
 	}
 
