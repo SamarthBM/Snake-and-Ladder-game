@@ -30,12 +30,22 @@ public class SnakeAndLadder {
 
 			case 0:
 				System.out.println("There are no play");
+				System.out.println("");
 				break;
 
 			case 1:
 				System.out.println("Ladder");
 				PLAYER_1 = PLAYER_1 + dice_num;
+				
+				if (PLAYER_1 > WINNING_POSITION) {
+					
+					PLAYER_1 = PLAYER_1-dice_num;
+				}
+				else {
+					System.out.println("You won");
+				}
 				System.out.println("Your position is: " + PLAYER_1);
+				System.out.println("");
 				break;
 
 			default:
@@ -47,6 +57,7 @@ public class SnakeAndLadder {
 					PLAYER_1 = 0;
 				}
 				System.out.println("Your position is: " + PLAYER_1);
+				System.out.println("");
 				break;
 
 			}
